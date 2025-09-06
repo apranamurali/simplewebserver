@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:30.08.2025
+## Date: 1.9.2025
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the list of protocols in TCP/IP Protocol Suite.
@@ -36,42 +36,25 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-
-~~~
+``` 
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
-content='''
+
+content= '''
+
 <html>
-<head>
-<title> My web server</title>
-</head>
-<body><center>
-    <h1>TCP/IP Protocol Suite</h1>
-    <table border="5" cell panding="1" align="center">
-        <tr>
-            <th>TCP/IP Layer</th>
-            <th>Key Protocols</th>
-       </tr>
-       <tr>
-            <td>Application Layer</td>
-            <td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, DHCP, TELNET, SNMP</td>
-       </tr>
-       <tr>
-            <td>Transport Layer</td>
-            <td>TCP, UDP, SCTP</td>
-       </tr>
-       <tr>
-            <td>Internet Layer</td>
-            <td>IP (IPv4, IPv6), ICMP, ARP, IGMP</td>
-       </tr>
-       <tr>
-            <td>Network Access Layer</td>
-            <td>Ethernet, Wi-Fi (IEEE 802.11), PPP, Frame Relay, DSL</td>
-       </tr>
-    </table>
-</center>
-</body>
+    <head><title>my first page</title></head>
+    <body>
+        <table align="center" border="10" cellpadding="15" bgcolor="white">
+            <caption>LIST OF PROTOCOLS IN TCP/IP PROTOCOL SUITE</caption>
+            <tr><th>S.No</th><th>Name of the layer</th><TH>Name of the Prototype</TH></tr>
+            <tr><td>1</td><td>Application Layer</td><th>HTTP,FTP,DNS,TELNET,SSH</th></tr>
+            <tr><td>2</td><td>Transport Layer</td><td>TCP/UDP</td></tr>
+            <tr><td>3</td><td>Networrk Layer</td><td>IPV4,IPV6</td></tr>
+            <tr><td>4</td><td>Link Layer</td><td>Ethernet</td></tr>
+    </body>
 </html>
+
 '''
 
 class MyServer(BaseHTTPRequestHandler):
@@ -82,17 +65,20 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(content.encode())
 
-print("This is my webserver") 
+print("This is my webserver, http://localhost:8000/") 
 server_address =('',8000)
 httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
-~~~
+
+```
+
 
 ## OUTPUT:
 
-![alt text](<Screenshot (6).png>)
-
 ![alt text](image.png)
+
+![alt text](image-1.png)
+
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
