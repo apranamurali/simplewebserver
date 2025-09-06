@@ -75,9 +75,11 @@ httpd.serve_forever()
 
 ## OUTPUT:
 
-![alt text](image.png)
+![WhatsApp Image 2025-09-06 at 08 32 02_3e1f0dd2](https://github.com/user-attachments/assets/7a7d7805-b814-422b-b4d7-d78e1a0be889)
 
-![alt text](image-1.png)
+
+![Uploading WhatsApp Image 2025-09-06 at 08.31.38_e4989600.jpg…]()
+
 
 
 ## RESULT:
